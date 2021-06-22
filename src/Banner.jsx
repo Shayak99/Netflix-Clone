@@ -14,14 +14,14 @@ const Banner = () => {
           Math.floor(Math.random() * request.data.results.length - 1)
         ]
       );
-      return request;
-      // console.table(request);
+      // return request;
+      console.table(request);
     }
     fetchData();
   }, []);
 
   function truncate(str, n) {
-    return str;
+    return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
   return (
     <header
@@ -40,9 +40,9 @@ const Banner = () => {
           <button className="banner-button">Play</button>
           <button className="banner-button">My List</button>
         </div>
-        <h1 className="banner-description">{movie?.overview}</h1>
-        {/* {movie} */}
+        <h1 className="banner-description">{truncate(movie?.overview, 150)}</h1>
       </div>
+      <div className="banner-fadebottom" />
     </header>
   );
 };

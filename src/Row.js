@@ -19,7 +19,7 @@ const Row = (props) => {
   console.table(movies);
   return (
     <div className="row">
-      <h2>{props.title}</h2>
+      <h2 style={{ color: "white" }}>{props.title}</h2>
 
       <div className="row-posters">
         {}
